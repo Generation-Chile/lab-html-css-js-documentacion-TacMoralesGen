@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- se define el lenguaje de la web a español -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- se incorpora el favicon de laweb -->
+    <link rel="icon" type="image/x-icon" href="./images/logoTacIco.ico" />
+    <title>TacMorales, Cohorte 17 - Fullstack Developers</title>
+    
+    <!-- Se importa una fuente usada para replicar el Welcome to del Header -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- Header en el que se carga la imagen de banner con css -->
+    <header>
+      <p>Welome to</p>
+      <h1>
+        FULL STACK
+        <br />
+        DEVELOPERS
+      </h1>
+    </header>
+    <!-- Segunda sección (primera etiqueta section), en la que está el banner principal y el llamado a la acción -->
+    <!-- ids más claros para personas que no están familiarizados con algunos temrinos como call to action -->
+    <section id="call-to-action">
+      <!-- Titulo principal con h1 -si se corrije lo del texto accesible en el header, este pasaría a ser el H1 y esté bajaría a nivel H2-->
+      <h2>
+        ¡Full Stack
+        <!-- Un span para poder remarcar Developers! con css -->
+        <span class="travel"> Developers! </span>
+      </h2>
+      <!-- Un subtitulo de 3er nivel -->
+      <h3>Únete a nuestro equipo</h3>
+      <p>La comunidad de desarrolladores Full Stack Developers!</p>
+      <!-- Botón del llamado a la acción. Es el fin principal de una web como la presente -->
+      <button id="cta-form">¡Quiero saber más!</button>
+    </section>
+
+    <!-- Tercera seccion (segunda etiqueta section). Formulario de contacto. -->
+    <section id="form">
+      <!-- Un subtitulo de 2do nivel -->
+      <h2>Contáctanos para obtener más información sobre nuestra comunidad</h2>
+      <!-- Los elementos de formulario van dentro de etiqueta form -->
+      <form>
+        <!-- Para enlazar label e input, sus propiedades for para label y la propiedad id para input deben ser iguales -->
+        <!-- La propiedad name es el nombre de la llave que contiene el valor ingresado por el usuario: así llega al servidor como par clave valor. -->
+        <!-- required indica que el campo es obligatorio para ser enviado [validación a nivel HTML] -->
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" required></textarea>
+        <!-- El boton se le asigna la función presionarBoton, es decir se ejecuta la función al momento del click -->
+        <!-- Esta vinculacion se realizó desde javascript, debido a acceso restringido por el alcance -->
+        <button id="form-button" type="button">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Ultima sección: footer, aquí se colocan el copyright pero también se tiende a poner datos de contacto y otros links de relevancia -->
+    <footer>
+      <!-- &copy; es la inyección del ícono copyright -->
+      <p>&copy; 2024 FullStack Developers. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Aquí se carga el script. Se carga al final, para que permita cargar el HTML primero.
+     Ahora también se puede poner defer o async y poner al principio en especial para documentos HTML muy grandes.
+     Estas propiedades permiten que no bloqueen la carga del documento HTML. -->
+    <script src="./script.js"></script>
+  </body>
+</html>

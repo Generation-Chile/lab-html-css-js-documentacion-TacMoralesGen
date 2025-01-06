@@ -1,0 +1,143 @@
+/* Se usa estas propiedades para TODOS los elementos y pseudoelementos */
+*,
+*:after,
+*:before {
+  /* Se usa Arial como fuente principal. Si esta fallara se usa sans-serif. */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Los estilos para el header.
+La imagen se inserta desde CSSporque tiene fines decorativos */
+header {
+  text-align: center;
+  padding: 50px 0;
+  background-image: url("./images/decorative-banner.png");
+  /*La propiedad y valor background-size: cover permite que la imagen de fondo
+  cubra por completo todo el content y padding de la caja del header en este caso.
+  Esto en desmedro de perder imagen si es que NO coincide la proporcion*/
+  background-size: cover;
+  /* Esta propiedad y valor background-position: top, en su contexto actual
+  provoca que la imagen no se corte en la parte superior.
+  Siempre coinciden el inicio de la caja y de la imagen en la arista superior.
+  Si se pierde imagen en el eje vertical,
+  ocurre solo en la zona inferior de la imagen.*/
+  background-position: top;
+  color: #fff;
+  height: 40vh;
+  overflow: hidden;
+
+  /* css nesting */
+  & p {
+    font-family: "Varela Round", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+  }
+  & h1 {
+    font-size: 6rem;
+    text-shadow: 2px 2px 2px #00000072;
+    line-height: 6rem;
+  }
+}
+
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#call-to-action {
+  & h2 {
+    font-size: 4em;
+    margin: 0;
+    margin-top: 10px;
+    text-shadow: 2px 2px 2px #00000072;
+    & span { /* span dentro de h2 dentro del section con id call-to-action */
+      color: #007bff;
+    }
+  }
+  & h3{ /* h3 dentro del section con id call-to-action */
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  & p{
+    margin: 0.8rem 0;
+  }
+}
+
+/* Se agrega :hover a button. Se usan versiones distintas del coolor*/
+/* se agrega un borde blanco en el boton sin hover
+para que no cambie el tamaño en el hover*/
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid #fff;
+  &:hover{
+    background-color: #0058b6;
+    border: 2px solid #007bff;
+  }
+}
+
+section#form {
+  background-color: #94ceeb;
+  & h2{
+    margin: 1rem 0;
+  }
+}
+
+/* Se alinea a la izquierda
+Se fija un maximo de ancho para que el formulario no tenga inputs largos */
+/* Tiene un gran margin-bottom para darle espacio al footer */
+form {
+  margin: 0 auto;
+  max-width: 350px;
+  text-align: left;
+  margin-bottom: 100px;
+}
+
+/*Se coloca los labels con block, ya que por defecto son inline.
+Esto para que se posicionen encima de sus inputs*/
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Se fija que el ancho de los inputs y textarea
+cubran por completo horizontalmente a su etiqueta padre: form*/
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Se disimula el borde fuera del hover. Se fija el ancho al 50% de su contenedor */
+/* Con margin-left se centra */
+form button {
+  border: 2px solid #94ceeb;
+  width: 50%;
+  margin: auto;
+  margin-left: 25%;
+}
+
+/* Se centra el texto */
+/* Se fija el footer, para que siempre aparezca */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.error{
+  border: 1px solid red;
+}
